@@ -6,9 +6,9 @@ function App() {
 
 
   async function doSfuff() {
-    const response = await fetch('http://localhost:5000/api/v1/products');
+    const response = await fetch('./api/v1/products');
     const data = await response.json();
-    console.log('Do stuff');
+    console.log(`Here is data: ${data}`);
 
   } 
 
