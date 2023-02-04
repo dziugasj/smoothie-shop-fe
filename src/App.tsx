@@ -1,39 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import { useDispatch } from "react-redux";
+import ProductList from "./components/ProductList";
+import { fetchTodos } from "./redux/actions";
+import { AppDispatch } from "./redux/store";
 
 function App() {
-
-
-  async function doSfuff() {
-    const response = await fetch('./api/v1/products');
-    const data = await response.json();
-    console.log(`Here is data: ${data}`);
-
-  } 
+  const dispatch = useDispatch<AppDispatch>();
+  const handleClick = () => dispatch(fetchTodos());
 
   return (
-    <div className="App">
-        <header className="App-header">  
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      <button className='btn' onClick={doSfuff}>
-        Confirm
+    <Fragment>
+      <button className="btn" onClick={handleClick}>
+        Load stuff
       </button>
-
-    </div>
+      <ProductList></ProductList>
+    </Fragment>
   );
 }
 
