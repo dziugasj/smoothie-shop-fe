@@ -8,7 +8,7 @@ const ProductItem: React.FC<Product> = (product) => {
     <ListItem disablePadding>
       <ListItemButton component="a">
         <ListItemText primary={product.name} />
-        <ListItemText primary={product.basicDetails} />
+        <ListItemText secondary={product.basicDetails} />
       </ListItemButton>
     </ListItem>
   );
