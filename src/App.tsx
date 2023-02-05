@@ -40,7 +40,10 @@ function App() {
               <ProductItem
                 key={product.id}
                 id={product.id}
+                productType={product.productType}
                 name={product.name}
+                basicDetails={product.basicDetails}
+                nutritionalValues={product.nutritionalValues}
               />
             ))}
           </List>
