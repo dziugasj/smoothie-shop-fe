@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Product } from "../types/types";
 
-export const fetchTodos = createAsyncThunk<Product[]>(
-  "todos/fetch",
+export const fetchProducts = createAsyncThunk<Product[]>(
+  "products/fetch",
   async () => {
     // Fetch the backend endpoint:
     const response = await fetch("./api/v1/products");
